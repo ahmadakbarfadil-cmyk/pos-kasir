@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan - POS System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cash-register"></i> POS System</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="menu-item"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="kasir.html" class="menu-item"><i class="fas fa-shopping-cart"></i> Kasir</a></li>
+                <li><a href="data-barang.html" class="menu-item"><i class="fas fa-box"></i> Data Barang</a></li>
+                <li><a href="laporan.html" class="menu-item active"><i class="fas fa-file-invoice-dollar"></i> Laporan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn btn-danger" id="logoutBtn" style="width: 100%;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="toggle-btn" id="toggleSidebarBtn"><i class="fas fa-bars"></i></button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;" class="mb-3">
+                    <h2>Laporan Penjualan</h2>
+                    <button class="btn btn-primary table-controls" onclick="window.print()">
+                        <i class="fas fa-print"></i> Cetak PDF
+                    </button>
+                </div>
+                
+                <div class="glass-card">
+                    <h3 style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem; margin-bottom: 1rem;">
+                        REKAPITULASI TRANSAKSI
+                    </h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No Nota</th>
+                                    <th>Tanggal</th>
+                                    <th>Kasir</th>
+                                    <th>Total Belanja</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableLaporanBody">
+                                <!-- JS render here -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3" style="text-align: right;">Total Pemasukan:</th>
+                                    <th id="lapGrandTotal">Rp 0</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

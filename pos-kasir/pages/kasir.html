@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir - POS System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cash-register"></i> POS System</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="menu-item"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="kasir.html" class="menu-item active"><i class="fas fa-shopping-cart"></i> Kasir</a></li>
+                <li><a href="data-barang.html" class="menu-item"><i class="fas fa-box"></i> Data Barang</a></li>
+                <li><a href="laporan.html" class="menu-item"><i class="fas fa-file-invoice-dollar"></i> Laporan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn btn-danger" id="logoutBtn" style="width: 100%;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="toggle-btn" id="toggleSidebarBtn"><i class="fas fa-bars"></i></button>
+                <div class="search-menu" style="width: 300px;">
+                    <input type="text" id="searchMenu" class="form-control" placeholder="Cari barang..." style="height: 40px;">
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="pos-layout">
+                    <!-- Left: Product Grid -->
+                    <div class="product-grid" id="productGrid">
+                        <!-- Product items rendered via JS -->
+                    </div>
+
+                    <!-- Right: Cart / Form -->
+                    <div class="glass-card cart-area">
+                        <h3 class="mb-2"><i class="fas fa-shopping-basket"></i> Keranjang</h3>
+                        <div class="cart-items" id="cartItems">
+                            <!-- Cart items rendered via JS -->
+                        </div>
+                        <div class="total-section">
+                            <div class="total-row">
+                                <span>Total Belanja</span>
+                                <span id="cartTotal">Rp 0</span>
+                            </div>
+                            <input type="hidden" id="hiddenTotal" value="0">
+                            <button class="btn btn-success" style="width: 100%; font-size: 1.1rem; padding: 1rem;" onclick="showPaymentModal()">
+                                <i class="fas fa-check-circle"></i> Bayar Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Pembayaran -->
+    <div class="modal-overlay" id="modalBayar">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Proses Pembayaran</h3>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="formBayar">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Uang Diterima (Rp)</label>
+                        <input type="number" id="inputUang" class="form-control" required style="font-size: 1.5rem; text-align: right;" min="1">
+                    </div>
+                    <div style="margin-top: 1.5rem; text-align: right;">
+                        <span style="opacity: 0.8;">Kembalian:</span>
+                        <h2 id="labelKembalian" style="font-size: 2rem;">Rp 0</h2>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-icon close-btn" style="border-radius: 8px;">Batal</button>
+                    <button type="submit" class="btn btn-primary">Selesaikan Transaksi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

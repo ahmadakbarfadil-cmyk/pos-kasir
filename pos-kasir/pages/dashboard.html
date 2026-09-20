@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - POS System</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cash-register"></i> POS System</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="menu-item active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="kasir.html" class="menu-item"><i class="fas fa-shopping-cart"></i> Kasir</a></li>
+                <li><a href="data-barang.html" class="menu-item"><i class="fas fa-box"></i> Data Barang</a></li>
+                <li><a href="laporan.html" class="menu-item"><i class="fas fa-file-invoice-dollar"></i> Laporan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn btn-danger" id="logoutBtn" style="width: 100%;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="toggle-btn" id="toggleSidebarBtn"><i class="fas fa-bars"></i></button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+                    <span>Admin Kasir</span>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <h2 class="mb-3">Dashboard Overview</h2>
+                
+                <div class="stats-grid">
+                    <div class="glass-card stat-card">
+                        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                        <div>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Pendapatan Hari Ini</p>
+                            <h3 id="dashPendapatan">Rp 0</h3>
+                        </div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-icon"><i class="fas fa-receipt"></i></div>
+                        <div>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Total Transaksi</p>
+                            <h3 id="dashTransaksi">0</h3>
+                        </div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                        <div>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Produk Aktif</p>
+                            <h3 id="dashProduk">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card mt-3">
+                    <h3 class="mb-2">Grafik Penjualan Mingguan</h3>
+                    <canvas id="dashboardChart" height="80"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
