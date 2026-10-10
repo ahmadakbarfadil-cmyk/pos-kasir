@@ -72,7 +72,7 @@ Desain awal dilakukan menggunakan Figma dan Google Stitch.
 
 **B. Link Google Stitch (Low-Mid Fidelity Wireframe)**
 > ![Preview Wireframe Stitch](https://via.placeholder.com/800x400.png?text=Placeholder+Wireframe+Stitch)
-> [Link Stitch Saya] (Silakan ganti dengan link Stitch asli Anda)
+> [Link Stitch Saya] https://stitch.withgoogle.com/projects/14608197327819079289
 
 ## 8. Struktur Folder Proyek
 ```text
